@@ -16,8 +16,8 @@
             <!-- Configuration PostgreSQL -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/blood_bank_db"/>
-            <property name="javax.persistence.jdbc.user" value="bloodbank_user"/>
-            <property name="javax.persistence.jdbc.password" value="password123"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="202580"/>
 
             <!-- Dialect PostgreSQL -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/>
