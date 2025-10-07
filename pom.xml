@@ -47,11 +47,10 @@
             <version>2.2</version>
         </dependency>
 
-        <!-- MySQL Driver -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
         </dependency>
 
         <!-- JUnit -->
@@ -84,6 +83,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
             </plugin>
+
 
             <!-- Compiler Plugin -->
             <plugin>
