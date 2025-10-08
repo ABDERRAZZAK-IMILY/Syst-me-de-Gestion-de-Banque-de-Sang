@@ -31,10 +31,9 @@
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="#accueil" class="hover:underline transition">Accueil</a></li>
-                    <li><a href="donneurs.jsp" class="hover:underline transition">Donneurs</a></li>
-                    <li><a href="receveurs.jsp" class="hover:underline transition">Receveurs</a></li>
+                    <li><a href="Donneurs.jsp" class="hover:underline transition">Donneurs</a></li>
+                    <li><a href="Receveurs.jsp" class="hover:underline transition">Receveurs</a></li>
                     <li><a href="#compatibilite" class="hover:underline transition">Compatibilite</a></li>
-                    <li><a href="#contact" class="hover:underline transition">Contact</a></li>
                 </ul>
             </nav>
         </div>
