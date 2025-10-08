@@ -150,6 +150,86 @@
             </form>
         </div>
 
+        <!-- Receveur Form -->
+        <div id="receveurForm" class="hidden max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <span class="text-3xl">&#127973;</span>
+                Formulaire Receveur
+            </h3>
 
+            <form action="receveurs" method="POST" class="space-y-6">
+                <input type="hidden" name="action" value="create">
+                <div class="border-b pb-6">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-4">Informations Personnelles</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div><label class="block text-sm font-medium text-gray-700 mb-2">Nom *</label><input type="text" name="nom" required class="w-full px-4 py-2 border rounded-lg"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-2">Prenom *</label><input type="text" name="prenom" required class="w-full px-4 py-2 border rounded-lg"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-2">CIN *</label><input type="text" name="cin" required pattern="[A-Z]{1,2}[0-9]{5,6}" class="w-full px-4 py-2 border rounded-lg"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-2">Date de Naissance *</label><input type="date" name="dateNaissance" required class="w-full px-4 py-2 border rounded-lg"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-2">Sexe *</label><select name="sexe" required class="w-full px-4 py-2 border rounded-lg"><option value="">Selectionner...</option><option value="HOMME">Homme</option><option value="FEMME">Femme</option></select></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-2">Téléphone *</label><input type="tel" name="telephone" required pattern="[0-9]{10}" class="w-full px-4 py-2 border rounded-lg"></div>
+                    </div>
+                </div>
+
+                <div class="border-b pb-6">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-4">Informations Médicales</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Groupe Sanguin *</label>
+                            <select name="groupeSanguin" required class="w-full px-4 py-2 border rounded-lg">
+                                <option value="">Selectionner...</option>
+                                <option>O-</option><option>O+</option>
+                                <option>A-</option><option>A+</option>
+                                <option>B-</option><option>B+</option>
+                                <option>AB-</option><option>AB+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Niveau d'Urgence *</label>
+                            <select name="urgence" required id="urgenceSelect" onchange="updatePochesInfo()" class="w-full px-4 py-2 border rounded-lg">
+                                <option value="">Selectionner...</option>
+                                <option value="CRITIQUE">CRITIQUE - 4 poches necessaires</option>
+                                <option value="URGENT">URGENT - 3 poches necessaires</option>
+                                <option value="NORMAL">NORMAL - 1 poche necessaire</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="urgenceInfo" class="hidden mt-4 p-4 rounded-lg"></div>
+                </div>
+
+                <div class="flex gap-4 pt-6">
+                    <button type="submit" class="flex-1 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition font-semibold shadow-lg">Enregistrer le Receveur</button>
+                    <button type="reset" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition font-semibold">Réinitialiser</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tab) {
+            const d = document.getElementById('donneurForm');
+            const r = document.getElementById('receveurForm');
+            const td = document.getElementById('tabDonneur');
+            const tr = document.getElementById('tabReceveur');
+            if (tab === 'donneur') {
+                d.classList.remove('hidden'); r.classList.add('hidden');
+                td.classList.add('bg-red-600','text-white'); tr.classList.remove('bg-red-600','text-white');
+            } else {
+                r.classList.remove('hidden'); d.classList.add('hidden');
+                tr.classList.add('bg-red-600','text-white'); td.classList.remove('bg-red-600','text-white');
+            }
+        }
+
+        function updatePochesInfo() {
+            const sel = document.getElementById('urgenceSelect');
+            const info = document.getElementById('urgenceInfo');
+            const val = sel.value;
+            info.classList.remove('hidden');
+            if (val === 'CRITIQUE') info.innerHTML = '<div class="bg-red-50 border-l-4 border-red-500 p-4">💥 CRITIQUE - 4 poches nécessaires</div>';
+            else if (val === 'URGENT') info.innerHTML = '<div class="bg-orange-50 border-l-4 border-orange-500 p-4">⚠️ URGENT - 3 poches nécessaires</div>';
+            else if (val === 'NORMAL') info.innerHTML = '<div class="bg-green-50 border-l-4 border-green-500 p-4">🟢 NORMAL - 1 poche nécessaire</div>';
+            else info.classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
