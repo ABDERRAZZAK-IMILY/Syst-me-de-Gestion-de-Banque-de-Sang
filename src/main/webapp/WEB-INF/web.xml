@@ -6,4 +6,25 @@
 
     <display-name>Blood Bank System</display-name>
 
+    <servlet>
+        <servlet-name>DonneurController</servlet-name>
+        <servlet-class>com.bloodbank.controller.DonneurController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DonneurController</servlet-name>
+        <url-pattern>/donneurs</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <servlet>
+        <servlet-name>ReceveurController</servlet-name>
+        <servlet-class>com.bloodbank.controller.ReceveurController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReceveurController</servlet-name>
+        <url-pattern>/receveurs</url-pattern>
+    </servlet-mapping>
+
 </web-app>
