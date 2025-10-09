@@ -33,7 +33,22 @@ public class Donneur {
     @Enumerated(EnumType.STRING)
     private StatutDonneur statut;
 
+
+    @ManyToOne
+    @JoinColumn(name = "receveur_id")
+    private Receveur receveur;
+
+    public Receveur getReceveur() {
+        return receveur;
+    }
+
+    public void setReceveur(Receveur receveur) {
+        this.receveur = receveur;
+    }
+
     public Donneur() {}
+
+
 
 
     public Long getId() { return id; }
