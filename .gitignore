@@ -24,8 +24,15 @@ hs_err_pid*
 replay_pid*
 
 
+
+
+# Ignorer le vrai fichier de configuration
+=======
 # Build directories
 target/
 build/
 
+
 src/main/resources/META-INF/persistence.xml
+# Garder l’exemple visible dans le repo
+!src/main/resources/META-INF/persistence.example.xml
