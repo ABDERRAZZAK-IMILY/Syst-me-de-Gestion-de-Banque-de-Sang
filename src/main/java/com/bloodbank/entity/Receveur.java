@@ -6,6 +6,8 @@ import com.bloodbank.entity.enums.UrgenceMedicale;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "receveurs")
@@ -27,6 +29,27 @@ public class Receveur {
     private EtatReceveur etat;
     private UrgenceMedicale urgence;
 
+
+    @OneToMany(mappedBy = "receveur", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Donneur> donneurs = new ArrayList<>();
+
+    public List<Donneur> getDonneurs() {
+        return donneurs;
+    }
+    public void addDonneur(Donneur donneur) {
+        donneurs.add(donneur);
+        donneur.setReceveur(this);
+    }
+
+    public void removeDonneur(Donneur donneur) {
+        donneurs.remove(donneur);
+        donneur.setReceveur(null);
+    }
+
+
+    public void setDonneurs(List<Donneur> donneurs) {
+        this.donneurs = donneurs;
+    }
 
     public UrgenceMedicale getUrgence() {
         return urgence;
