@@ -33,4 +33,10 @@ public class DonneurService {
     public List<Donneur> Findall(){
         return  dao.findAll();
     }
+
+    public Donneur findById(long id) {
+        return  dao.findById(id);
+    }
+
+
 }

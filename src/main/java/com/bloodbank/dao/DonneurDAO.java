@@ -17,6 +17,11 @@ public class DonneurDAO {
         em.getTransaction().commit();
     }
 
+
+    public Donneur findById(Long id){
+        return em.find(Donneur.class , id);
+    }
+
     public List<Donneur> findAll() {
         return em.createQuery("SELECT d FROM Donneur d", Donneur.class).getResultList();
     }

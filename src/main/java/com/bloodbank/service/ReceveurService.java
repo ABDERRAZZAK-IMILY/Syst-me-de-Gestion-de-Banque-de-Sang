@@ -45,6 +45,8 @@ public class ReceveurService {
         dao.update(r);
     }
 
-
+    public Receveur findById(long id) {
+        return dao.findById(id);
+    }
 
 }
