@@ -10,13 +10,14 @@
 
         <class>com.bloodbank.entity.Donneur</class>
         <class>com.bloodbank.entity.Receveur</class>
+        <class>com.bloodbank.entity.Association</class>
 
         <properties>
             <!-- Configuration PostgreSQL -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="${DB_URL}"/>
-            <property name="javax.persistence.jdbc.user" value="${DB_USER}"/>
-            <property name="javax.persistence.jdbc.password" value="${DB_PASSWORD}"/>
+            <property name="javax.persistence.jdbc.url" value=" change it with url"/>
+            <property name="javax.persistence.jdbc.user" value="change it with username"/>
+            <property name="javax.persistence.jdbc.password" value="change it with password"/>
 
             <!-- Dialect PostgreSQL -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/>

@@ -10,6 +10,8 @@ public class ReceveurDAO {
 
     private EntityManager em;
 
+    public  ReceveurDAO(){}
+
     public ReceveurDAO(EntityManager em){
         this.em = em;
     }
@@ -30,5 +32,11 @@ public class ReceveurDAO {
         em.merge(r);
         em.getTransaction().commit();
     }
+
+
+    public Receveur findById(Long id) {
+        return em.find(Receveur.class, id);
+    }
+
 
 }
