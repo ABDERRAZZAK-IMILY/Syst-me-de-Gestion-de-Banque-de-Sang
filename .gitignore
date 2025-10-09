@@ -23,4 +23,9 @@
 hs_err_pid*
 replay_pid*
 
+
+# Build directories
+target/
+build/
+
 src/main/resources/META-INF/persistence.xml
