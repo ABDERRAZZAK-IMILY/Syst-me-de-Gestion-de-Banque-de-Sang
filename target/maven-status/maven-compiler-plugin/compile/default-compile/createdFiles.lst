@@ -1,1 +1,13 @@
+com\bloodbank\controller\ReceveurController.class
+com\bloodbank\entity\enums\UrgenceMedicale.class
 com\bloodbank\util\JPAUtil.class
+com\bloodbank\dao\ReceveurDAO.class
+com\bloodbank\controller\DonneurController.class
+com\bloodbank\entity\Receveur.class
+com\bloodbank\entity\enums\EtatReceveur.class
+com\bloodbank\util\EnvLoader.class
+com\bloodbank\service\ReceveurService.class
+com\bloodbank\entity\enums\StatutDonneur.class
+com\bloodbank\service\DonneurService.class
+com\bloodbank\dao\DonneurDAO.class
+com\bloodbank\entity\Donneur.class
