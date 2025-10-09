@@ -41,3 +41,13 @@ src/main/resources/META-INF/persistence.xml
 
 /target/
 build/
+
+# Tomcat work directory
+**/tomcat/work/
+
+# Generated JSP files
+**/org/apache/jsp/*.java
+**/org/apache/jsp/*.class
+
+# Logs
+**/tomcat/logs/
