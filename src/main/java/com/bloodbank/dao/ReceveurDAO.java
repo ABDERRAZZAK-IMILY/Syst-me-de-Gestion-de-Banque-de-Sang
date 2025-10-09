@@ -25,4 +25,10 @@ public class ReceveurDAO {
         return em.createQuery("SELECT r FROM Receveur r" , Receveur.class).getResultList();
     }
 
+    public void update(Receveur r) {
+        em.getTransaction().begin();
+        em.merge(r);
+        em.getTransaction().commit();
+    }
+
 }
