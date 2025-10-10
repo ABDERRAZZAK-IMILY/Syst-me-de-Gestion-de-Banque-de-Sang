@@ -1,6 +1,5 @@
 package com.bloodbank.entity;
 
-
 import com.bloodbank.entity.enums.EtatReceveur;
 import com.bloodbank.entity.enums.UrgenceMedicale;
 
@@ -14,7 +13,7 @@ import java.util.List;
 public class Receveur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String nom;
     private String prenom;
@@ -27,115 +26,50 @@ public class Receveur {
 
     @Enumerated(EnumType.STRING)
     private EtatReceveur etat;
-    private UrgenceMedicale urgence;
 
+    @Enumerated(EnumType.STRING)
+    private UrgenceMedicale urgence;
 
     @OneToMany(mappedBy = "receveur", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Donneur> donneurs = new ArrayList<>();
 
-    public List<Donneur> getDonneurs() {
-        return donneurs;
-    }
-    public void addDonneur(Donneur donneur) {
-        donneurs.add(donneur);
-        donneur.setReceveur(this);
-    }
-
-    public void removeDonneur(Donneur donneur) {
-        donneurs.remove(donneur);
-        donneur.setReceveur(null);
-    }
+    public Receveur() {}
 
 
-    public void setDonneurs(List<Donneur> donneurs) {
-        this.donneurs = donneurs;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public UrgenceMedicale getUrgence() {
-        return urgence;
-    }
+    public String getNom() { return nom; }
+    public void setNom(String nom) { this.nom = nom; }
 
-    public void setUrgence(UrgenceMedicale urgence) {
-        this.urgence = urgence;
-    }
+    public String getPrenom() { return prenom; }
+    public void setPrenom(String prenom) { this.prenom = prenom; }
 
-    public EtatReceveur getEtat() {
-        return etat;
-    }
+    public String getCin() { return cin; }
+    public void setCin(String cin) { this.cin = cin; }
 
-    public void setEtat(EtatReceveur etat) {
-        this.etat = etat;
-    }
+    public LocalDate getDateNaissance() { return dateNaissance; }
+    public void setDateNaissance(LocalDate dateNaissance) { this.dateNaissance = dateNaissance; }
 
-    public double getPoids() {
-        return poids;
-    }
+    public String getSexe() { return sexe; }
+    public void setSexe(String sexe) { this.sexe = sexe; }
 
-    public void setPoids(double poids) {
-        this.poids = poids;
-    }
+    public String getTelephone() { return telephone; }
+    public void setTelephone(String telephone) { this.telephone = telephone; }
 
-    public String getGroupeSanguin() {
-        return groupeSanguin;
-    }
+    public String getGroupeSanguin() { return groupeSanguin; }
+    public void setGroupeSanguin(String groupeSanguin) { this.groupeSanguin = groupeSanguin; }
 
-    public void setGroupeSanguin(String groupeSanguin) {
-        this.groupeSanguin = groupeSanguin;
-    }
+    public double getPoids() { return poids; }
+    public void setPoids(double poids) { this.poids = poids; }
 
-    public String getTelephone() {
-        return telephone;
-    }
+    public EtatReceveur getEtat() { return etat; }
+    public void setEtat(EtatReceveur etat) { this.etat = etat; }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
+    public UrgenceMedicale getUrgence() { return urgence; }
+    public void setUrgence(UrgenceMedicale urgence) { this.urgence = urgence; }
 
-    public String getSexe() {
-        return sexe;
-    }
+    public List<Donneur> getDonneurs() { return donneurs; }
+    public void setDonneurs(List<Donneur> donneurs) { this.donneurs = donneurs; }
 
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
-    }
-
-    public LocalDate getDateNaissance() {
-        return dateNaissance;
-    }
-
-    public void setDateNaissance(LocalDate dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
-
-    public String getCin() {
-        return cin;
-    }
-
-    public void setCin(String cin) {
-        this.cin = cin;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }

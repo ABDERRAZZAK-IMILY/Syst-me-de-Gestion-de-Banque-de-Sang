@@ -11,7 +11,7 @@ public class Donneur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String nom;
     private String prenom;
@@ -22,7 +22,6 @@ public class Donneur {
     private String groupeSanguin;
     private double poids;
 
-    // Contre-indications
     private boolean hepatiteB;
     private boolean hepatiteC;
     private boolean vih;
@@ -33,24 +32,13 @@ public class Donneur {
     @Enumerated(EnumType.STRING)
     private StatutDonneur statut;
 
-
     @ManyToOne
     @JoinColumn(name = "receveur_id")
     private Receveur receveur;
 
-    public Receveur getReceveur() {
-        return receveur;
-    }
-
-    public void setReceveur(Receveur receveur) {
-        this.receveur = receveur;
-    }
-
     public Donneur() {}
 
-
-
-
+    // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -98,4 +86,8 @@ public class Donneur {
 
     public StatutDonneur getStatut() { return statut; }
     public void setStatut(StatutDonneur statut) { this.statut = statut; }
+
+    public Receveur getReceveur() { return receveur; }
+    public void setReceveur(Receveur receveur) { this.receveur = receveur; }
+    
 }
