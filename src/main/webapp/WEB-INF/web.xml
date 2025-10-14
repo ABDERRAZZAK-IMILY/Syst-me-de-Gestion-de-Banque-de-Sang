@@ -61,5 +61,13 @@
         <url-pattern>/receveurs/delete</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DeletDonneur</servlet-name>
+        <servlet-class>com.bloodbank.controller.DeletDonneur</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletDonneur</servlet-name>
+        <url-pattern>/Donneur/delete</url-pattern>
+    </servlet-mapping>
 
 </web-app>
