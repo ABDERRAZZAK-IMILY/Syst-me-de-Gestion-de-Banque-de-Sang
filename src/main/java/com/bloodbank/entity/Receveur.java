@@ -92,6 +92,11 @@ public class Receveur {
     }
 
 
+    @Transient
+    public boolean isPochesCompletes() {
+        return this.donneurs != null && this.donneurs.size() >= getPochesNecessaires();
+    }
+
 
 
 
