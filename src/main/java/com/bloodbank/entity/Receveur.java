@@ -97,7 +97,13 @@ public class Receveur {
         return this.donneurs != null && this.donneurs.size() >= getPochesNecessaires();
     }
 
-
+    public void updateEtatAuto() {
+        if (isPochesCompletes()) {
+            this.etat = EtatReceveur.SATISFAIT;
+        } else {
+            this.etat = EtatReceveur.EN_ATTENTE;
+        }
+    }
 
 
 
