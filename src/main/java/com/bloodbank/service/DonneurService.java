@@ -44,5 +44,12 @@ public class DonneurService {
         return dao.findAvailableByCompatibleGroup(r.getGroupeSanguin());
     }
 
+    public void DeletById(Long id){
+        Donneur d = dao.findById(id);
+        if (d != null){
+            dao.delete(d);
+        }
+    }
+
 
 }
