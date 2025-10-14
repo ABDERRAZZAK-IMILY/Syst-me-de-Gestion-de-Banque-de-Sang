@@ -3,6 +3,7 @@ package com.bloodbank.controller;
 
 import  com.bloodbank.entity.Receveur;
 import  com.bloodbank.dao.ReceveurDAO;
+import com.bloodbank.entity.enums.EtatReceveur;
 import com.bloodbank.entity.enums.UrgenceMedicale;
 import com.bloodbank.service.ReceveurService;
 import com.bloodbank.util.JPAUtil;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class ReceveurController extends HttpServlet {
@@ -38,6 +40,7 @@ public class ReceveurController extends HttpServlet {
         r.setTelephone(req.getParameter("telephone"));
         r.setGroupeSanguin(req.getParameter("groupeSanguin"));
         r.setUrgence(UrgenceMedicale.valueOf(req.getParameter("urgence")));
+        r.setEtat(EtatReceveur.EN_ATTENTE);
 
         service.enregistrer(r);
 
@@ -46,5 +49,7 @@ public class ReceveurController extends HttpServlet {
 
 
     }
+
+
 
 }
