@@ -72,4 +72,28 @@ public class Receveur {
     public List<Donneur> getDonneurs() { return donneurs; }
     public void setDonneurs(List<Donneur> donneurs) { this.donneurs = donneurs; }
 
+
+    @Transient
+    public int getPochesNecessaires() {
+        if (this.getUrgence() == null) {
+            return 1;
+        }
+
+        switch (this.getUrgence()) {
+            case NORMAL:
+                return 1;
+            case URGENT:
+                return 3;
+            case CRITIQUE:
+                return 4;
+            default:
+                return 1;
+        }
+    }
+
+
+
+
+
+
 }
