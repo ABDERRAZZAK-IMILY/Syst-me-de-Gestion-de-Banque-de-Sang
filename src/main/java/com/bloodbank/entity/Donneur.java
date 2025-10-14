@@ -4,6 +4,7 @@ import com.bloodbank.entity.enums.StatutDonneur;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table(name = "donneurs")
@@ -89,5 +90,13 @@ public class Donneur {
 
     public Receveur getReceveur() { return receveur; }
     public void setReceveur(Receveur receveur) { this.receveur = receveur; }
-    
+
+
+    @Transient
+    public int getAge() {
+        if (dateNaissance == null) return 0;
+        return Period.between(dateNaissance, LocalDate.now()).getYears();
+    }
+
+
 }
