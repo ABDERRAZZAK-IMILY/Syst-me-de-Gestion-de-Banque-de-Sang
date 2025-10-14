@@ -306,7 +306,7 @@
                             class="flex-1 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition font-semibold">
                         Annuler
                     </button>
-                    <form id="deleteForm" method="POST" class="flex-1">
+                    <form id="deleteForm" action="Donneur/delete"  method="POST" class="flex-1">
                         <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="id" id="deleteId">
                         <button type="submit"
