@@ -25,7 +25,18 @@ replay_pid*
 
 
 
+
+
+# Ignorer le vrai fichier de configuration
+
+# Build directories
+target/
+build/
+
+
+
 src/main/resources/META-INF/persistence.xml
+
 
 
 
@@ -52,3 +63,7 @@ build/
 
 # Logs
 **/tomcat/logs/
+
+# Garder l’exemple visible dans le repo
+!src/main/resources/META-INF/persistence.example.xml
+

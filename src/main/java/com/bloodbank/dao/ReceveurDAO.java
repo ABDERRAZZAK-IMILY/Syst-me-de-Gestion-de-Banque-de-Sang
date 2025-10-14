@@ -33,6 +33,7 @@ public class ReceveurDAO {
         em.getTransaction().commit();
     }
 
+
     public Receveur findById(Long id) {
         return em.find(Receveur.class, id);
     }
@@ -45,5 +46,6 @@ public class ReceveurDAO {
     em.getTransaction().commit();
 
     }
+
 
 }
