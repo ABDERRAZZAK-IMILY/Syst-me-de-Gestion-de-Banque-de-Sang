@@ -38,4 +38,13 @@ public class DonneurDAO {
     public List<Donneur> findAll() {
         return em.createQuery("SELECT d FROM Donneur d", Donneur.class).getResultList();
     }
+
+    public void delete(Donneur d){
+        em.getTransaction().begin();
+        Donneur att = em.find(Donneur.class , d.getId());
+        em.remove(att);
+        em.getTransaction().commit();
+
+    }
+
 }
