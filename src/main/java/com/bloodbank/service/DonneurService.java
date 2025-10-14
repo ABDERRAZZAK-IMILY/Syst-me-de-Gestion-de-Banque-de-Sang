@@ -2,6 +2,7 @@ package com.bloodbank.service;
 
 import com.bloodbank.dao.DonneurDAO;
 import com.bloodbank.entity.Donneur;
+import com.bloodbank.entity.Receveur;
 import com.bloodbank.entity.enums.StatutDonneur;
 import java.time.LocalDate;
 import java.time.Period;
@@ -36,6 +37,11 @@ public class DonneurService {
 
     public Donneur findById(long id) {
         return  dao.findById(id);
+    }
+
+
+    public List<Donneur> findCompatibleAndAvailableFor(Receveur r) {
+        return dao.findAvailableByCompatibleGroup(r.getGroupeSanguin());
     }
 
 

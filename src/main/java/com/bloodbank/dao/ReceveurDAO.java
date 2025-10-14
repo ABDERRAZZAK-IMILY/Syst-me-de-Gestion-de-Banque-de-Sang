@@ -38,5 +38,14 @@ public class ReceveurDAO {
         return em.find(Receveur.class, id);
     }
 
+    public void  delete(Receveur r){
+    em.getTransaction().begin();
+    Receveur attach = em.find(Receveur.class , r.getId());
+
+    em.remove(attach);
+    em.getTransaction().commit();
+
+    }
+
 
 }

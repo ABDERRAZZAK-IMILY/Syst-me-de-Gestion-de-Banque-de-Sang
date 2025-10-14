@@ -1,8 +1,12 @@
 package com.bloodbank.dao;
 
+import com.bloodbank.entity.BloodCompatibility;
 import com.bloodbank.entity.Donneur;
+import com.bloodbank.entity.enums.StatutDonneur;
+
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DonneurDAO {
     private EntityManager em;
@@ -20,6 +24,15 @@ public class DonneurDAO {
 
     public Donneur findById(Long id){
         return em.find(Donneur.class , id);
+    }
+
+    public List<Donneur> findAvailableByCompatibleGroup(String receveurGroup) {
+        return em.createQuery("SELECT d FROM Donneur d WHERE d.statut != :statut AND d.receveur IS NULL", Donneur.class)
+                .setParameter("statut", StatutDonneur.NON_ELIGIBLE)
+                .getResultList()
+                .stream()
+                .filter(d -> BloodCompatibility.isCompatible(d.getGroupeSanguin(), receveurGroup))
+                .collect(Collectors.toList());
     }
 
     public List<Donneur> findAll() {

@@ -11,6 +11,7 @@ import java.util.List;
 
 public class ReceveurService {
 
+    private static final int MAX_DONNEURS = 4;
     private ReceveurDAO dao;
 
     public  ReceveurService(ReceveurDAO dao){
@@ -39,8 +40,13 @@ public class ReceveurService {
             throw new IllegalArgumentException("Le donneur n’est pas disponible ou est déjà associé");
         }
 
-        r.addDonneur(d);
+        if (r.getDonneurs().size() >= MAX_DONNEURS) {
+            throw new IllegalStateException("Le receveur ne peut pas recevoir plus de " + MAX_DONNEURS + " dons !");
+        }
+        r.getDonneurs().add(d);
+        d.setReceveur(r);
         d.setStatut(StatutDonneur.NON_DISPONIBLE);
+        r.updateEtatAuto();
 
         dao.update(r);
     }
@@ -48,5 +54,25 @@ public class ReceveurService {
     public Receveur findById(long id) {
         return dao.findById(id);
     }
+
+
+    public void dissociateDonneur(Receveur r, Donneur d) {
+        r.getDonneurs().remove(d);
+        d.setReceveur(null);
+        d.setStatut(StatutDonneur.DISPONIBLE);
+
+        r.updateEtatAuto();
+
+        dao.update(r);
+    }
+
+
+    public void deleteById(Long id) {
+        Receveur r = dao.findById(id);
+        if (r != null) {
+            dao.delete(r);
+        }
+    }
+
 
 }

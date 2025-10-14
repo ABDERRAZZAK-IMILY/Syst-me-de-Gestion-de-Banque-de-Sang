@@ -174,7 +174,6 @@
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nom Complet</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">CIN</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Groupe Sanguin</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Age</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Telephone</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Urgence</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Etat</th>
@@ -211,9 +210,7 @@
                                                 ${receveur.groupeSanguin}
                                             </span>
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            ${receveur.age} ans
-                                        </td>
+
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                             ${receveur.telephone}
                                         </td>
@@ -260,15 +257,7 @@
                                                         <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
                                                             <div class="bg-blue-600 h-2 rounded-full" style="width: ${(receveur.donneurs.size() * 100) / receveur.pochesNecessaires}%"></div>
                                                         </div>
-                                                        <div class="text-xs text-gray-600">
-                                                            <c:forEach var="donneur" items="${receveur.donneurs}" varStatus="status">
-                                                                <div class="truncate">
-                                                                    <a href="donneurs?id=${donneur.id}" class="text-blue-600 hover:text-blue-800">
-                                                                        ${donneur.nom} ${donneur.prenom} (${donneur.groupeSanguin})
-                                                                    </a>
-                                                                </div>
-                                                            </c:forEach>
-                                                        </div>
+
                                                     </c:when>
                                                     <c:otherwise>
                                                         <span class="text-gray-400">0/${receveur.pochesNecessaires} poches</span>
@@ -278,11 +267,18 @@
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <div class="flex gap-2">
+                                            <div class="flex flex-col gap-2">
+                                                <!-- Bouton Voir Donneurs Compatibles -->
+                                                <a href="compatibleDonors?receveurId=${receveur.id}"
+                                                   class="text-green-600 hover:text-green-900 bg-green-50 px-3 py-1 rounded transition text-center">
+                                                    Voir Donneurs
+                                                </a>
+
                                                 <a href="receveurs?action=edit&id=${receveur.id}"
-                                                   class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition">
+                                                   class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition text-center">
                                                     Modifier
                                                 </a>
+
                                                 <button onclick="confirmDelete(${receveur.id}, '${receveur.nom} ${receveur.prenom}')"
                                                         class="text-red-600 hover:text-red-900 bg-red-50 px-3 py-1 rounded transition">
                                                     Supprimer
@@ -360,7 +356,7 @@
                             class="flex-1 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition font-semibold">
                         Annuler
                     </button>
-                    <form id="deleteForm" method="POST" class="flex-1">
+                    <form id="deleteForm"  action="receveurs/delete" method="POST" class="flex-1">
                         <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="id" id="deleteId">
                         <button type="submit"
@@ -384,7 +380,6 @@
             document.getElementById('deleteModal').classList.add('hidden');
         }
 
-        // Close modal on outside click
         document.getElementById('deleteModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeDeleteModal();
@@ -393,4 +388,4 @@
     </script>
 
 </body>
-</html
+</html>
