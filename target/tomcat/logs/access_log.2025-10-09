@@ -4,3 +4,8 @@
 0:0:0:0:0:0:0:1 - - [09/Oct/2025:09:58:32 +0200] "GET /blood-bank-system/Receveurs.jsp HTTP/1.1" 200 13136 http-bio-8080-exec-5 218
 0:0:0:0:0:0:0:1 - - [09/Oct/2025:09:58:34 +0200] "GET /blood-bank-system/creation.jsp HTTP/1.1" 200 14555 http-bio-8080-exec-6 84
 0:0:0:0:0:0:0:1 - - [09/Oct/2025:09:59:16 +0200] "POST /blood-bank-system/receveurs HTTP/1.1" 200 14789 http-bio-8080-exec-7 3673
+0:0:0:0:0:0:0:1 - - [09/Oct/2025:16:44:31 +0200] "GET /blood-bank-system HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [09/Oct/2025:16:44:31 +0200] "GET /blood-bank-system/ HTTP/1.1" 200 24095 http-bio-8080-exec-3 66
+0:0:0:0:0:0:0:1 - - [09/Oct/2025:16:44:45 +0200] "GET /blood-bank-system/Donneurs.jsp HTTP/1.1" 200 11757 http-bio-8080-exec-4 990
+0:0:0:0:0:0:0:1 - - [09/Oct/2025:16:44:48 +0200] "GET /blood-bank-system/Receveurs.jsp HTTP/1.1" 200 13136 http-bio-8080-exec-5 179
+0:0:0:0:0:0:0:1 - - [09/Oct/2025:16:44:49 +0200] "GET /blood-bank-system/creation.jsp HTTP/1.1" 200 14555 http-bio-8080-exec-6 89

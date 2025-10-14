@@ -1,1 +1,6 @@
 com\bloodbank\util\JPAUtil.class
+com\bloodbank\entity\BloodCompatibility.class
+com\bloodbank\controller\AssosiateDonneurReceveur.class
+com\bloodbank\controller\CompatibleDonorsServlet.class
+com\bloodbank\entity\Receveur$1.class
+com\bloodbank\controller\DeletReceveur.class

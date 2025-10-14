@@ -27,4 +27,39 @@
         <url-pattern>/receveurs</url-pattern>
     </servlet-mapping>
 
+
+
+    <servlet>
+        <servlet-name>AssosiateDonneurReceveur</servlet-name>
+        <servlet-class>com.bloodbank.controller.AssosiateDonneurReceveur</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssosiateDonneurReceveur</servlet-name>
+        <url-pattern>/assosiate</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>CompatibleDonorsServlet</servlet-name>
+        <servlet-class>com.bloodbank.controller.CompatibleDonorsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CompatibleDonorsServlet</servlet-name>
+        <url-pattern>/compatibleDonors</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>DeletReceveur</servlet-name>
+        <servlet-class>com.bloodbank.controller.DeletReceveur</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeletReceveur</servlet-name>
+        <url-pattern>/receveurs/delete</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

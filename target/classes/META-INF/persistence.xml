@@ -10,7 +10,6 @@
 
         <class>com.bloodbank.entity.Donneur</class>
         <class>com.bloodbank.entity.Receveur</class>
-        <class>com.bloodbank.entity.Association</class>
 
         <properties>
             <!-- Configuration PostgreSQL -->
