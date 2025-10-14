@@ -50,6 +50,14 @@ public class ReceveurController extends HttpServlet {
 
     }
 
+    @Override
+    protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
 
+     List<Receveur> r =  service.Findall();
+
+     req.setAttribute("receveurs" , r );
+        req.getRequestDispatcher("/Receveurs.jsp").forward(req ,resp);
+
+    }
 
 }
