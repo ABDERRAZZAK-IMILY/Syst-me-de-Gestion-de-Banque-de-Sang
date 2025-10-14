@@ -56,15 +56,6 @@ public class ReceveurService {
     }
 
 
-    public void dissociateDonneur(Receveur r, Donneur d) {
-        r.getDonneurs().remove(d);
-        d.setReceveur(null);
-        d.setStatut(StatutDonneur.DISPONIBLE);
-
-        r.updateEtatAuto();
-
-        dao.update(r);
-    }
 
 
     public void deleteById(Long id) {
