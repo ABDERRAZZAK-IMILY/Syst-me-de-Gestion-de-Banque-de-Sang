@@ -22,8 +22,8 @@
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="index.jsp" class="hover:underline transition">Accueil</a></li>
-                    <li><a href="Donneurs.jsp" class="font-bold underline">Donneurs</a></li>
-                    <li><a href="Receveurs.jsp" class="hover:underline transition">Receveurs</a></li>
+                    <li><a href="${pageContext.request.contextPath}/donneurs" class="font-bold underline">Donneurs</a></li>
+                    <li><a href="${pageContext.request.contextPath}/receveurs" class="hover:underline transition">Receveurs</a></li>
                     <li><a href="creation.jsp" class="hover:underline transition">Ajouter</a></li>
                 </ul>
             </nav>
@@ -94,7 +94,7 @@
         </div>
 
         <!-- Filters and Search -->
-        <div class="bg-white rounded-lg shadow p-6 mb-6">
+        <!-- <div class="bg-white rounded-lg shadow p-6 mb-6">
             <form action="donneurs" method="GET" class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Rechercher</label>
@@ -137,20 +137,23 @@
                     </a>
                 </div>
             </form>
-        </div>
+        </div>--!>
 
         <!-- Success/Error Messages -->
-        <c:if test="${not empty successMessage}">
-            <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded">
-                <p class="font-semibold">&#9989; ${successMessage}</p>
-            </div>
-        </c:if>
+       <c:if test="${not empty sessionScope.successMessage}">
+           <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded">
+               <p class="font-semibold">&#9989; ${sessionScope.successMessage}</p>
+           </div>
+           <c:remove var="successMessage" scope="session"/>
+       </c:if>
 
-        <c:if test="${not empty errorMessage}">
-            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded">
-                <p class="font-semibold">&#10060; ${errorMessage}</p>
-            </div>
-        </c:if>
+       <c:if test="${not empty sessionScope.errorMessage}">
+           <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded">
+               <p class="font-semibold">&#10060; ${sessionScope.errorMessage}</p>
+           </div>
+           <c:remove var="errorMessage" scope="session"/>
+       </c:if>
+
 
         <!-- Donneurs Table -->
         <div class="bg-white rounded-lg shadow overflow-hidden">
@@ -327,7 +330,7 @@
          <div class="relative top-20 mx-auto p-6 border w-96 shadow-lg rounded-lg bg-white">
              <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Modifier le Donneur</h3>
 
-             <form id="editForm" action="updateDonneur" method="POST" class="space-y-4">
+             <form id="editForm" action="donneur/update" method="POST" class="space-y-4">
                  <input type="hidden" name="id" id="editId">
 
                  <div>
