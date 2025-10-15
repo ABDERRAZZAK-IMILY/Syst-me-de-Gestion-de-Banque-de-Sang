@@ -75,4 +75,9 @@ public class ReceveurService {
     }
 
 
+    public void update(Receveur r){
+        dao.update(r);
+    }
+
+
 }
