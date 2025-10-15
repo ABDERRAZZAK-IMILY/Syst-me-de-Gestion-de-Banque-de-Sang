@@ -88,7 +88,7 @@ Application web JEE pour la gestion complète des donneurs et receveurs de sang 
 
 Architecture MVC Multicouches :
 
-`
+```
 src/
 ├── main/
 │ ├── java/
@@ -109,4 +109,4 @@ src/
 │ └── creation.jsp
 └── test/
 └── java/ # Tests JUnit
-`
+```
