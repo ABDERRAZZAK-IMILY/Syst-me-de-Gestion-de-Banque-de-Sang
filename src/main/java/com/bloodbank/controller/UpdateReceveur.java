@@ -44,8 +44,7 @@ private ReceveurService service;
 
 
        req.setAttribute("receveurs", service.Findall());
-       req.getRequestDispatcher("/Receveur.jsp").forward(req, resp);
-
+       req.getRequestDispatcher("/Receveur").forward(req, resp);
 
    }
 
