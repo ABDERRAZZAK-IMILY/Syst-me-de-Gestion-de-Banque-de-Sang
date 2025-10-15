@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class DonneurController extends HttpServlet {
 
@@ -44,4 +45,21 @@ public class DonneurController extends HttpServlet {
         req.setAttribute("successMessage", " Donneur enregistré avec succès !");
         req.getRequestDispatcher("creation.jsp").forward(req, resp);
     }
+
+
+    @Override
+    protected  void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
+
+      List<Donneur> don  =  service.Findall();
+
+      req.setAttribute("donneurs" , don);
+
+      req.getRequestDispatcher("Donneurs.jsp").forward(req , resp);
+
+
+
+
+    }
+
+
 }
