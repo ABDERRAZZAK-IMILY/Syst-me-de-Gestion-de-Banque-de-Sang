@@ -24,7 +24,6 @@ Application web JEE pour la gestion complète des donneurs et receveurs de sang 
 - [Tests](#tests)
 - [Règles Métier](#règles-métier)
 - [Diagramme de Classe](#diagramme-de-classe)
-- [Fonctionnalités Bonus](#fonctionnalités-bonus)
 - [Gestion de Projet](#gestion-de-projet)
 - [Contributeurs](#contributeurs)
 - [Licence](#licence)
@@ -111,3 +110,116 @@ src/
 └── test/
 └── java/ # Tests JUnit
 ```
+
+
+
+**Design Patterns Utilisés**
+- Repository Pattern
+- Singleton Pattern
+- MVC Pattern
+- DAO Pattern
+- Service Layer Pattern
+
+---
+
+## 📦 Prérequis
+- JDK 8+
+- Maven 3.6+
+- Apache Tomcat 9+
+- PostgreSQL 12+
+- IDE : IntelliJ IDEA / Eclipse / NetBeans
+
+---
+
+## 🚀 Installation
+
+1. **Cloner le projet**
+```bash
+git clone https://github.com/votre-username/banque-sang.git
+cd banque-sang
+
+```
+```sql 
+CREATE DATABASE banque_sang CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+2. **Configurer persistence.xml**
+
+```xml
+<persistence-unit name="banque-sang-pu">
+    <properties>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banque_sang"/>
+        <property name="javax.persistence.jdbc.user" value="root"/>
+        <property name="javax.persistence.jdbc.password" value="votre_password"/>
+        <property name="hibernate.hbm2ddl.auto" value="update"/>
+    </properties>
+</persistence-unit>
+```
+
+4. **Compiler avec Maven**
+
+```bash
+mvn clean install
+```
+# Utilisation
+
+Page d'Accueil : Vue générale et visualisateur de compatibilité
+
+Ajouter un Donneur : Formulaire avec validation automatique
+
+Ajouter un Receveur : Formulaire avec niveau d'urgence
+
+Associer Donneur-Receveur : Affichage uniquement des compatibilités
+
+Filtrer et Rechercher : Par groupe sanguin, statut ou urgence
+
+# 🧪 Tests
+
+```bash
+mvn test
+```
+
+# 📊 Règles Métier
+
+## Critères d'Éligibilité des Donneurs
+
+| Critère                  | Valeur Requise       |
+|---------------------------|--------------------|
+| Âge                       | 18 - 65 ans        |
+| Poids                     | ≥ 50 kg            |
+| Hépatite B/C              | Non                |
+| VIH                       | Non                |
+| Diabète insulino-dépendant| Non                |
+| Grossesse                 | Non                |
+| Allaitement               | Non                |
+
+## Niveaux d'Urgence et Poches Nécessaires
+
+| Urgence   | Poches | Priorité  |
+|-----------|--------|----------|
+| CRITIQUE  | 4      | Maximale |
+| URGENT    | 3      | Élevée   |
+| NORMAL    | 1      | Standard |
+
+## Statuts
+
+**Donneurs** : DISPONIBLE, NON_DISPONIBLE, NON_ELIGIBLE  
+**Receveurs** : EN_ATTENTE, SATISFAIT
+
+# 📈 Diagramme de Classe
+
+![alt text]({E486BABC-0AB7-403B-9E0E-A97B0E0DBD4E}.png)
+
+
+# 📝 Gestion de Projet
+
+Méthodologie : Scrum / JIRA
+
+User Stories, Sprints d’1 semaine, Backlog priorisé, Burndown chart
+
+# 👥 Contributeurs
+
+IMILY ABDERRAZZAK
+
+# 📞 Contact
+
+Pour toute question : azeimily2001@gmail.com
