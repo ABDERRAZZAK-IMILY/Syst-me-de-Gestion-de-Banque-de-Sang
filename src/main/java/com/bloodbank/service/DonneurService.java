@@ -51,5 +51,9 @@ public class DonneurService {
         }
     }
 
+   public void update(Donneur d){
+        dao.update(d);
+   }
+
 
 }
