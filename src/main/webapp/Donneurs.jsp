@@ -322,75 +322,84 @@
         </div>
     </div>
 
+     <!-- Edit Donneur Modal -->
      <div id="editModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-            <div class="relative top-20 mx-auto p-6 border w-96 shadow-lg rounded-lg bg-white">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Modifier le Donneur</h3>
+         <div class="relative top-20 mx-auto p-6 border w-96 shadow-lg rounded-lg bg-white">
+             <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Modifier le Donneur</h3>
 
-                <form id="editForm" action="updateDonneur" method="POST" class="space-y-4">
-                    <input type="hidden" name="id" id="editId">
+             <form id="editForm" action="updateDonneur" method="POST" class="space-y-4">
+                 <input type="hidden" name="id" id="editId">
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nom</label>
-                        <input type="text" name="nom" id="editNom"
-                               class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
-                    </div>
+                 <div>
+                     <label class="block text-sm font-medium text-gray-700">Nom</label>
+                     <input type="text" name="nom" id="editNom"
+                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                 </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Prenom</label>
-                        <input type="text" name="prenom" id="editPrenom"
-                               class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
-                    </div>
+                 <div>
+                     <label class="block text-sm font-medium text-gray-700">Prenom</label>
+                     <input type="text" name="prenom" id="editPrenom"
+                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                 </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">CIN</label>
-                        <input type="text" name="cin" id="editCin"
-                               class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
-                    </div>
+                 <div>
+                     <label class="block text-sm font-medium text-gray-700">CIN</label>
+                     <input type="text" name="cin" id="editCin"
+                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                 </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Téléphone</label>
-                        <input type="text" name="telephone" id="editTelephone"
-                               class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
-                    </div>
+                 <div>
+                     <label class="block text-sm font-medium text-gray-700">Téléphone</label>
+                     <input type="text" name="telephone" id="editTelephone"
+                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                 </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Groupe Sanguin</label>
-                        <select name="groupeSanguin" id="editGroupeSanguin"
-                                class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
-                            <option value="O-">O-</option>
-                            <option value="O+">O+</option>
-                            <option value="A-">A-</option>
-                            <option value="A+">A+</option>
-                            <option value="B-">B-</option>
-                            <option value="B+">B+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="AB+">AB+</option>
-                        </select>
-                    </div>
+                 <div>
+                     <label class="block text-sm font-medium text-gray-700">Poids (kg)</label>
+                     <input type="number" name="poids" id="editPoids"
+                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                 </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Statut</label>
-                        <select name="urgence" id="editUrgence"
-                                class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
-                            <option value="Disponible">Disponible</option>
-                            <option value="NON_DISPONIBLE">NON_DISPONIBLE</option>
-                        </select>
-                    </div>
+                 <div>
+                     <label class="block text-sm font-medium text-gray-700">Groupe Sanguin</label>
+                     <select name="groupeSanguin" id="editGroupeSanguin"
+                             class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                         <option value="O-">O-</option>
+                         <option value="O+">O+</option>
+                         <option value="A-">A-</option>
+                         <option value="A+">A+</option>
+                         <option value="B-">B-</option>
+                         <option value="B+">B+</option>
+                         <option value="AB-">AB-</option>
+                         <option value="AB+">AB+</option>
+                     </select>
+                 </div>
 
-                    <div class="flex gap-4 mt-4">
-                        <button type="button" onclick="closeEditModal()"
-                                class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition font-semibold">
-                            Annuler
-                        </button>
+                 <div>
+                     <label class="block text-sm font-medium text-gray-700">Statut</label>
+                     <select name="statut" id="editStatut"
+                             class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                         <option value="DISPONIBLE">Disponible</option>
+                         <option value="NON_DISPONIBLE">Non Disponible</option>
+                         <option value="NON_ELIGIBLE">Non Eligible</option>
+                     </select>
+                 </div>
 
-                        <button type="submit"
-                                class="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition font-semibold">
-                            Enregistrer
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+                 <div class="flex gap-4 mt-4">
+                     <button type="button" onclick="closeEditModal()"
+                             class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition font-semibold">
+                         Annuler
+                     </button>
+
+                     <button type="submit"
+                             class="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition font-semibold">
+                         Enregistrer
+                     </button>
+                 </div>
+             </form>
+         </div>
+     </div>
+
 
     <script>
         function confirmDelete(id, name) {
