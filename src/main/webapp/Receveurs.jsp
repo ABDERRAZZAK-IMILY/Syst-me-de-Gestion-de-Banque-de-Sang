@@ -22,8 +22,8 @@
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="index.jsp" class="hover:underline transition">Accueil</a></li>
-                    <li><a href="Donneurs.jsp" class="hover:underline transition">Donneurs</a></li>
-                    <li><a href="Receveurs.jsp" class="font-bold underline">Receveurs</a></li>
+                    <li><a href="${pageContext.request.contextPath}/donneurs" class="hover:underline transition">Donneurs</a></li>
+                    <li><a href="${pageContext.request.contextPath}/receveurs" class="font-bold underline">Receveurs</a></li>
                     <li><a href="creation.jsp" class="hover:underline transition">Ajouter</a></li>
                 </ul>
             </nav>
@@ -106,7 +106,7 @@
         </div>
 
         <!-- Filters and Search -->
-        <div class="bg-white rounded-lg shadow p-6 mb-6">
+         <!-- <div class="bg-white rounded-lg shadow p-6 mb-6">
             <form action="receveurs" method="GET" class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Rechercher</label>
@@ -149,7 +149,7 @@
                     </a>
                 </div>
             </form>
-        </div>
+        </div> -->
 
         <!-- Success/Error Messages -->
         <c:if test="${not empty successMessage}">
@@ -376,7 +376,7 @@
         <div class="relative top-20 mx-auto p-6 border w-96 shadow-lg rounded-lg bg-white">
             <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Modifier le Receveur</h3>
 
-            <form id="editForm" action="updateReceveur" method="POST" class="space-y-4">
+            <form id="editForm" action="receveur/update" method="POST" class="space-y-4">
                 <input type="hidden" name="id" id="editId">
 
                 <div>
@@ -427,6 +427,15 @@
                         <option value="NORMAL">NORMAL</option>
                     </select>
                 </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">État</label>
+                    <select name="etat" id="editEtat"
+                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                        <option value="EN_ATTENTE">EN_ATTENTE</option>
+                        <option value="SATISFAIT">SATISFAIT</option>
+                    </select>
+                </div>
+
 
                 <div class="flex gap-4 mt-4">
                     <button type="button" onclick="closeEditModal()"
