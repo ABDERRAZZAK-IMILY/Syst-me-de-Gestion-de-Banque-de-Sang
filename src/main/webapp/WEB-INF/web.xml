@@ -70,4 +70,25 @@
         <url-pattern>/Donneur/delete</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>UpdateDonneur</servlet-name>
+        <servlet-class>com.bloodbank.controller.UpdateDonneur</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateDonneur</servlet-name>
+        <url-pattern>/donneur/update</url-pattern>
+    </servlet-mapping>
+
+   <servlet>
+       <servlet-name>UpdateReceveur</servlet-name>
+       <servlet-class>com.bloodbank.controller.UpdateReceveur</servlet-class>
+   </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateReceveur</servlet-name>
+        <url-pattern>/receveur/update</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
