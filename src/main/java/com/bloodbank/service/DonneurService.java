@@ -52,6 +52,17 @@ public class DonneurService {
     }
 
    public void update(Donneur d){
+
+       int age = Period.between(d.getDateNaissance(), LocalDate.now()).getYears();
+
+       boolean contreIndication = d.isHepatiteB() || d.isHepatiteC() || d.isVih() ||
+               d.isDiabete() || d.isGrossesse() || d.isAllaitement();
+
+       if (age < 18 || age > 65 || d.getPoids() < 50 || contreIndication) {
+           d.setStatut(StatutDonneur.NON_ELIGIBLE);
+       } else {
+           d.setStatut(StatutDonneur.DISPONIBLE);
+       }
         dao.update(d);
    }
 
