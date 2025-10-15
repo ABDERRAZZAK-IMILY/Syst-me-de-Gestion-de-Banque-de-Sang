@@ -19,34 +19,31 @@ public class DeletDonneur extends HttpServlet {
     public void init(){
      this.donser = new DonneurService(new DonneurDAO(JPAUtil.getEntityManager()));
  }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String strId = req.getParameter("id");
 
- @Override
-    protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
+        if (strId != null && !strId.isEmpty()) {
+            try {
+                Long id = Long.parseLong(strId);
+                donser.DeletById(id);
 
-     String strId = req.getParameter("id");
+                req.getSession().setAttribute("successMessage", "Donneur supprimé avec succès !");
 
-     if (strId != null && !strId.isEmpty() ){
+                resp.sendRedirect(req.getContextPath() + "/donneurs");
 
-         try {
-             Long id = Long.parseLong(strId);
-             donser.DeletById(id);
+            } catch (Exception e) {
+                e.printStackTrace();
+                req.getSession().setAttribute("errorMessage", "Erreur lors de la suppression du donneur");
+                resp.sendRedirect(req.getContextPath() + "/donneurs");
+                return;
+            }
+        } else {
+            req.getSession().setAttribute("errorMessage", "ID de donneur manquant !");
+            resp.sendRedirect(req.getContextPath() + "/donneurs");
+        }
+    }
 
-             req.setAttribute("donneurs" , donser.Findall());
-             req.setAttribute("successMessage" , "Donneur supprimé avec succès !");
-
-
-         } catch (Exception e) {
-             e.printStackTrace();
-             req.setAttribute("errorMessage", "Erreur lors de la suppression du donneur");
-         }
-     } else {
-         req.setAttribute("errorMessage", "ID de donneur manquant !");
-     }
-
-
-    req.getRequestDispatcher("Donneurs.jsp").forward(req ,resp);
-
-     }
 
 
  }
