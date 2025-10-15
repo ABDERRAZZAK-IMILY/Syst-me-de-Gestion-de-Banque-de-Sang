@@ -37,3 +37,5 @@ build/
 
 # Ignore persistence.xml (optional)
 **/persistence.xml
+
+.env
