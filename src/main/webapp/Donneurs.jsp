@@ -239,10 +239,12 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                             <div class="flex gap-2">
-                                                <a href="donneurs?action=edit&id=${donneur.id}"
-                                                   class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition">
-                                                    Modifier
-                                                </a>
+
+                                                <button href="#"
+                                                  onclick="openEditModal(${donneur.id}, '${donneur.nom}', '${donneur.prenom}', '${donneur.cin}', '${receveur.telephone}', '${receveur.groupeSanguin}', '${donneur.poids}', '${donneur.statu}')"
+                                                  class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition text-center">
+                                                  Modifier
+                                                 </button>
                                                 <button onclick="confirmDelete(${donneur.id}, '${donneur.nom} ${donneur.prenom}')"
                                                         class="text-red-600 hover:text-red-900 bg-red-50 px-3 py-1 rounded transition">
                                                     Supprimer
