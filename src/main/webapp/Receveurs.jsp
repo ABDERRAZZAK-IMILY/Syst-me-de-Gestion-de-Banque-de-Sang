@@ -274,11 +274,11 @@
                                                     Voir Donneurs
                                                 </a>
 
-                                              <a href="#"
+                                              <button href="#"
                                                  onclick="openEditModal(${receveur.id}, '${receveur.nom}', '${receveur.prenom}', '${receveur.cin}', '${receveur.telephone}', '${receveur.groupeSanguin}', '${receveur.urgence}', '${receveur.etat}')"
                                                  class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition text-center">
                                                  Modifier
-                                              </a>
+                                              </button>
 
 
                                                 <button onclick="confirmDelete(${receveur.id}, '${receveur.nom} ${receveur.prenom}')"
