@@ -274,10 +274,12 @@
                                                     Voir Donneurs
                                                 </a>
 
-                                                <a href="receveurs?action=edit&id=${receveur.id}"
-                                                   class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition text-center">
-                                                    Modifier
-                                                </a>
+                                              <a href="#"
+                                                 onclick="openEditModal(${receveur.id}, '${receveur.nom}', '${receveur.prenom}', '${receveur.cin}', '${receveur.telephone}', '${receveur.groupeSanguin}', '${receveur.urgence}', '${receveur.etat}')"
+                                                 class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition text-center">
+                                                 Modifier
+                                              </a>
+
 
                                                 <button onclick="confirmDelete(${receveur.id}, '${receveur.nom} ${receveur.prenom}')"
                                                         class="text-red-600 hover:text-red-900 bg-red-50 px-3 py-1 rounded transition">
@@ -369,6 +371,8 @@
         </div>
     </div>
 
+
+
     <script>
         function confirmDelete(id, name) {
             document.getElementById('deleteId').value = id;
@@ -385,6 +389,8 @@
                 closeDeleteModal();
             }
         });
+
+
     </script>
 
 </body>
