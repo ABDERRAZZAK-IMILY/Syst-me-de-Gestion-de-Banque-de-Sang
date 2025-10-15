@@ -21,8 +21,8 @@
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="index.jsp" class="hover:underline transition">Accueil</a></li>
-                    <li><a href="Donneurs.jsp" class="hover:underline transition">Donneurs</a></li>
-                    <li><a href="Receveurs.jsp" class="hover:underline transition">Receveurs</a></li>
+                    <li><a href="${pageContext.request.contextPath}/donneurs" class="hover:underline transition">Donneurs</a></li>
+                    <li><a href="${pageContext.request.contextPath}/receveurs" class="hover:underline transition">Receveurs</a></li>
                     <li><a href="creation.jsp" class="font-bold underline">Ajouter</a></li>
                 </ul>
             </nav>
