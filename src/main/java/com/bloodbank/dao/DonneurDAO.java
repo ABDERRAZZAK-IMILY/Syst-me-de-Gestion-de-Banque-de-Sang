@@ -47,4 +47,10 @@ public class DonneurDAO {
 
     }
 
+    public void update(Donneur d){
+        em.getTransaction().begin();
+        em.merge(d);
+        em.getTransaction().commit();
+    }
+
 }
