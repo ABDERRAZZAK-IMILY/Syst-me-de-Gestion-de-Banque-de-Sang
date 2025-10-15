@@ -28,14 +28,15 @@
                 <span class="text-3xl">&#128137;</span>
                 Banque de Sang
             </h1>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#accueil" class="hover:underline transition">Accueil</a></li>
-                    <li><a href="Donneurs.jsp" class="hover:underline transition">Donneurs</a></li>
-                    <li><a href="Receveurs.jsp" class="hover:underline transition">Receveurs</a></li>
-                    <li><a href="#compatibilite" class="hover:underline transition">Compatibilite</a></li>
-                </ul>
-            </nav>
+           <nav>
+             <ul class="flex space-x-6">
+               <li><a href="#accueil" class="hover:underline transition">Accueil</a></li>
+               <li><a href="${pageContext.request.contextPath}/donneurs" class="hover:underline transition">Donneurs</a></li>
+               <li><a href="${pageContext.request.contextPath}/receveurs" class="hover:underline transition">Receveurs</a></li>
+               <li><a href="#compatibilite" class="hover:underline transition">Compatibilite</a></li>
+             </ul>
+           </nav>
+
         </div>
     </header>
 
@@ -171,7 +172,7 @@
 
             <!-- CTA Section -->
             <div class="text-center space-y-4">
-                <a href="creation.jsp" class="inline-block bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-red-700 transition-colors shadow-lg mr-4">
+                <a href="${pageContext.request.contextPath}/creation.jsp" class="inline-block bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-red-700 transition-colors shadow-lg mr-4">
                     Ajouter Donneur/Receveur
                 </a>
                 <a href="#compatibilite" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-blue-700 transition-colors shadow-lg">
