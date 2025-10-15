@@ -67,7 +67,7 @@
         <c:otherwise>
             <div class="text-center py-10">
                 <h2 class="text-xl font-semibold text-gray-600">Aucun donneur compatible trouvé</h2>
-                <a href="receveurs.jsp" class="mt-4 inline-block bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg">
+                <a href="${pageContext.request.contextPath}/receveurs" class="mt-4 inline-block bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg">
                     Retour
                 </a>
             </div>
