@@ -408,6 +408,27 @@
                 closeDeleteModal();
             }
         });
+
+         function openEditModal(id, nom, prenom, cin, telephone, groupeSanguin, urgence, etat) {
+                        document.getElementById('editId').value = id;
+                        document.getElementById('editNom').value = nom;
+                        document.getElementById('editPrenom').value = prenom;
+                        document.getElementById('editCin').value = cin;
+                        document.getElementById('editTelephone').value = telephone;
+                        document.getElementById('editGroupeSanguin').value = groupeSanguin;
+                        document.getElementById('editUrgence').value = urgence;
+                        document.getElementById('editEtat').value = etat;
+                        document.getElementById('editModal').classList.remove('hidden');
+                    }
+
+                    function closeEditModal() {
+                        document.getElementById('editModal').classList.add('hidden');
+                    }
+
+                    document.getElementById('editModal').addEventListener('click', function(e) {
+                        if (e.target === this) closeEditModal();
+                    });
+
     </script>
 
 </body>
