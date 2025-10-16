@@ -192,46 +192,46 @@
                 Selectionnez un groupe sanguin donneur pour visualiser les receveurs compatibles
             </p>
 
-            <div class="relative mx-auto w-full max-w-[600px] min-h-[600px]">
-                <h3 class="text-lg font-semibold mb-4">Selectionnez le groupe sanguin du donneur :</h3>
+            <div class="relative mx-auto w-full max-w-[900px] min-h-[750px]">
+                <h3 class="text-lg font-semibold mb-6 text-center">Selectionnez le groupe sanguin du donneur :</h3>
 
-                <div id="blood_selector" class="grid grid-cols-4 gap-2 w-64 mb-8">
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">O-</div>
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">O+</div>
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">A-</div>
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">A+</div>
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">B-</div>
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">B+</div>
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">AB-</div>
-                    <div class="select-none flex items-center justify-center h-12 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all">AB+</div>
+                <div id="blood_selector" class="grid grid-cols-4 gap-3 w-80 mb-12 mx-auto">
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">O-</div>
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">O+</div>
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">A-</div>
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">A+</div>
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">B-</div>
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">B+</div>
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">AB-</div>
+                    <div class="select-none flex items-center justify-center h-14 bg-white border-2 border-red-600 rounded-lg cursor-pointer hover:border-blue-500 hover:font-bold transition-all text-lg font-semibold">AB+</div>
                 </div>
 
-                <div class="relative w-full h-[500px]">
+                <div class="relative w-full h-[600px]">
                     <!-- Horizontal bar -->
                     <div class="absolute right-0 top-0 w-3/5 h-2 bg-gray-300 rounded-l"></div>
 
                     <!-- Blood bag -->
-                    <div class="absolute w-24 h-36 top-12 left-1/2 -translate-x-1/2 rounded-[30px] bg-blue-200/90 border-8 border-blue-200/90">
-                        <div class="absolute -top-[118px] left-1/2 -translate-x-1/2 w-3 h-28 bg-gray-300"></div>
-                        <div id="blood_bag" class="absolute left-0 bottom-0 w-full h-24 bg-[#b51e23] rounded-b-[35px] transition-all duration-1000 ease-in-out">
+                    <div class="absolute w-28 h-40 top-12 left-1/2 -translate-x-1/2 rounded-[30px] bg-blue-200/90 border-8 border-blue-200/90">
+                        <div class="absolute -top-[100px] left-1/2 -translate-x-1/2 w-3 h-24 bg-gray-300"></div>
+                        <div id="blood_bag" class="absolute left-0 bottom-0 w-full h-28 bg-[#b51e23] rounded-b-[35px] transition-all duration-1000 ease-in-out">
                             <div class="absolute -top-1.5 w-full h-2.5 bg-[#92191b] rounded-full"></div>
                         </div>
                     </div>
 
                     <!-- Center via -->
-                    <div class="absolute left-1/2 -translate-x-1/2 top-48 w-2 h-48 bg-gray-300">
+                    <div class="absolute left-1/2 -translate-x-1/2 top-52 w-2 h-64 bg-gray-300">
                         <div id="center_via" class="w-2 h-0 bg-[#b51e23] transition-all duration-300 ease-in-out"></div>
                     </div>
 
                     <!-- Recipients grid -->
-                    <div id="humans" class="absolute top-48 left-1/2 -translate-x-1/2 w-96 grid grid-cols-2 gap-y-4">
+                    <div id="humans" class="absolute top-52 left-1/2 -translate-x-1/2 w-[550px] grid grid-cols-2 gap-y-10">
                         <!-- O- -->
-                        <div class="human relative flex items-center">
-                            <div class="absolute -left-20 flex items-center gap-2">
-                                <span class="blood_type font-bold">O-</span>
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center h-8">
+                            <div class="absolute -left-32 flex items-center gap-3">
+                                <span class="blood_type font-bold text-lg w-10">O-</span>
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
                             </div>
                             <div class="absolute left-0 w-full h-2 bg-gray-300"></div>
@@ -239,25 +239,25 @@
                         </div>
 
                         <!-- O+ -->
-                        <div class="human relative flex items-center justify-end">
-                            <div class="absolute -right-20 flex items-center gap-2">
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center justify-end h-8">
+                            <div class="absolute -right-32 flex items-center gap-3">
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
-                                <span class="blood_type font-bold">O+</span>
+                                <span class="blood_type font-bold text-lg w-10">O+</span>
                             </div>
                             <div class="absolute right-0 w-full h-2 bg-gray-300"></div>
                             <div class="blood_via absolute right-0 h-2 w-0 bg-[#b51e23] transition-all duration-1000 ease-in-out"></div>
                         </div>
 
                         <!-- A- -->
-                        <div class="human relative flex items-center">
-                            <div class="absolute -left-20 flex items-center gap-2">
-                                <span class="blood_type font-bold">A-</span>
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center h-8">
+                            <div class="absolute -left-32 flex items-center gap-3">
+                                <span class="blood_type font-bold text-lg w-10">A-</span>
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
                             </div>
                             <div class="absolute left-0 w-full h-2 bg-gray-300"></div>
@@ -265,25 +265,25 @@
                         </div>
 
                         <!-- A+ -->
-                        <div class="human relative flex items-center justify-end">
-                            <div class="absolute -right-20 flex items-center gap-2">
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center justify-end h-8">
+                            <div class="absolute -right-32 flex items-center gap-3">
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
-                                <span class="blood_type font-bold">A+</span>
+                                <span class="blood_type font-bold text-lg w-10">A+</span>
                             </div>
                             <div class="absolute right-0 w-full h-2 bg-gray-300"></div>
                             <div class="blood_via absolute right-0 h-2 w-0 bg-[#b51e23] transition-all duration-1000 ease-in-out"></div>
                         </div>
 
                         <!-- B- -->
-                        <div class="human relative flex items-center">
-                            <div class="absolute -left-20 flex items-center gap-2">
-                                <span class="blood_type font-bold">B-</span>
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center h-8">
+                            <div class="absolute -left-32 flex items-center gap-3">
+                                <span class="blood_type font-bold text-lg w-10">B-</span>
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
                             </div>
                             <div class="absolute left-0 w-full h-2 bg-gray-300"></div>
@@ -291,25 +291,25 @@
                         </div>
 
                         <!-- B+ -->
-                        <div class="human relative flex items-center justify-end">
-                            <div class="absolute -right-20 flex items-center gap-2">
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center justify-end h-8">
+                            <div class="absolute -right-32 flex items-center gap-3">
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
-                                <span class="blood_type font-bold">B+</span>
+                                <span class="blood_type font-bold text-lg w-10">B+</span>
                             </div>
                             <div class="absolute right-0 w-full h-2 bg-gray-300"></div>
                             <div class="blood_via absolute right-0 h-2 w-0 bg-[#b51e23] transition-all duration-1000 ease-in-out"></div>
                         </div>
 
                         <!-- AB- -->
-                        <div class="human relative flex items-center">
-                            <div class="absolute -left-20 flex items-center gap-2">
-                                <span class="blood_type font-bold">AB-</span>
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center h-8">
+                            <div class="absolute -left-32 flex items-center gap-3">
+                                <span class="blood_type font-bold text-lg w-10">AB-</span>
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
                             </div>
                             <div class="absolute left-0 w-full h-2 bg-gray-300"></div>
@@ -317,13 +317,13 @@
                         </div>
 
                         <!-- AB+ -->
-                        <div class="human relative flex items-center justify-end">
-                            <div class="absolute -right-20 flex items-center gap-2">
-                                <div class="w-8 h-8 relative">
-                                    <div class="w-3 h-3 bg-gray-600 rounded-full absolute top-1 left-1"></div>
-                                    <div class="w-4 h-3 bg-gray-600 rounded-t-full absolute bottom-0"></div>
+                        <div class="human relative flex items-center justify-end h-8">
+                            <div class="absolute -right-32 flex items-center gap-3">
+                                <div class="w-10 h-10 relative">
+                                    <div class="w-4 h-4 bg-gray-600 rounded-full absolute top-1.5 left-1.5"></div>
+                                    <div class="w-5 h-4 bg-gray-600 rounded-t-full absolute bottom-0 left-0.5"></div>
                                 </div>
-                                <span class="blood_type font-bold">AB+</span>
+                                <span class="blood_type font-bold text-lg w-10">AB+</span>
                             </div>
                             <div class="absolute right-0 w-full h-2 bg-gray-300"></div>
                             <div class="blood_via absolute right-0 h-2 w-0 bg-[#b51e23] transition-all duration-1000 ease-in-out"></div>
@@ -382,23 +382,24 @@ function selectBloodType(element) {
 function resetAnimation() {
   bloodVias.forEach(via => via.style.width = "0");
   bloodTypeLabels.forEach(label => label.classList.remove("text-red-600", "font-extrabold"));
-  bloodBag.style.height = "6rem";
+  bloodBag.style.height = "7rem";
   centerVia.style.height = "0";
 }
 
 async function animateBloodFlow(donor) {
   const recipients = BLOOD_TYPES[donor];
-  const bloodTypeKeys = Object.keys(BLOOD_TYPES);
+  const allBloodTypes = ["O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+"];
 
-  for (let recipient of recipients) {
-    const index = bloodTypeKeys.indexOf(recipient);
-    const height = 50 + 50 * Math.floor(index / 2);
-    const bloodHeight = 125 - 25 * Math.floor(index / 2);
+  for (let i = 0; i < recipients.length; i++) {
+    const recipient = recipients[i];
+    const index = allBloodTypes.indexOf(recipient);
+    const height = 60 + 70 * Math.floor(index / 2);
+    const bloodHeight = 112 - 14 * Math.floor(index / 2);
 
     bloodBag.style.height = bloodHeight + "px";
     centerVia.style.height = height + "px";
 
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 350));
 
     bloodVias[index].style.width = "100%";
     bloodTypeLabels[index].classList.add("text-red-600", "font-extrabold");

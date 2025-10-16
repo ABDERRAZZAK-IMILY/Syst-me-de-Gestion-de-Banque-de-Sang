@@ -15,7 +15,7 @@ public class DeletDonneur extends HttpServlet {
  private DonneurService donser;
 
 
- @Override
+   @Override
     public void init(){
      this.donser = new DonneurService(new DonneurDAO(JPAUtil.getEntityManager()));
  }
@@ -43,7 +43,5 @@ public class DeletDonneur extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/donneurs");
         }
     }
-
-
 
  }
