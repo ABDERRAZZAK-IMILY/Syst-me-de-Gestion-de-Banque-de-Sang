@@ -10,7 +10,7 @@ Application web JEE pour la gestion complète des donneurs et receveurs de sang 
 
 ## Visualisateur de Compatibilite Sanguine
 
-![alt text]({8D082AB7-972E-42A3-951A-15FA4EED0A8B}.png)
+![img_1.png](img_1.png)
 
 ## 📋 Table des Matières
 
