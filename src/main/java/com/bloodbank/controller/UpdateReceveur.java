@@ -38,14 +38,8 @@ private ReceveurService service;
        rec.setGroupeSanguin(req.getParameter("groupeSanguin"));
        rec.setUrgence(UrgenceMedicale.valueOf(req.getParameter("urgence")));
      service.update(rec);
-
-     req.setAttribute("successMessage" , "receveur est update avec succe");
-
-
-
-       req.setAttribute("receveurs", service.Findall());
-       req.getRequestDispatcher("/Receveur").forward(req, resp);
-
+       req.getSession().setAttribute("successMessage", "Receveur mis à jour avec succès !");
+       resp.sendRedirect(req.getContextPath() + "/receveurs");
    }
 
 
