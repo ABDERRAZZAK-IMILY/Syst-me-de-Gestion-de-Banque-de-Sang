@@ -1,6 +1,7 @@
 package com.bloodbank.dao;
 
 import com.bloodbank.entity.Receveur;
+import com.bloodbank.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 
@@ -23,9 +24,14 @@ public class ReceveurDAO {
         em.getTransaction().commit();
     }
 
-    public List<Receveur> findALL(){
-        return em.createQuery("SELECT r FROM Receveur r" , Receveur.class).getResultList();
+    public List<Receveur> findALL() {
+        EntityManager emp = JPAUtil.getEntityManager();
+        List<Receveur> liste = emp.createQuery(
+                        "SELECT r FROM Receveur r LEFT JOIN FETCH r.donneurs", Receveur.class)
+                .getResultList();
+        return liste;
     }
+
 
     public void update(Receveur r) {
         em.getTransaction().begin();
