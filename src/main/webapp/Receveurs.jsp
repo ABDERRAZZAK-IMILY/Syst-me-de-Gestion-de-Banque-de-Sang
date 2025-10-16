@@ -152,11 +152,13 @@
         </div> -->
 
         <!-- Success/Error Messages -->
-        <c:if test="${not empty successMessage}">
-            <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded">
-                <p class="font-semibold">&#9989; ${successMessage}</p>
-            </div>
-        </c:if>
+       <c:if test="${not empty sessionScope.successMessage}">
+           <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded">
+               <p class="font-semibold">&#9989; ${sessionScope.successMessage}</p>
+           </div>
+           <c:remove var="successMessage" scope="session"/>
+       </c:if>
+
 
         <c:if test="${not empty errorMessage}">
             <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded">
@@ -275,7 +277,7 @@
                                                 </a>
 
                                               <button href="#"
-                                                 onclick="openEditModal(${receveur.id}, '${receveur.nom}', '${receveur.prenom}', '${receveur.cin}', '${receveur.telephone}', '${receveur.groupeSanguin}', '${receveur.urgence}', '${receveur.etat}')"
+                                                 onclick="openEditModal(${receveur.id}, '${receveur.nom}', '${receveur.prenom}', '${receveur.cin}', '${receveur.telephone}', '${receveur.groupeSanguin}', '${receveur.urgence}' ,'${receveur.dateNaissance}')"
                                                  class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded transition text-center">
                                                  Modifier
                                               </button>
@@ -376,7 +378,7 @@
         <div class="relative top-20 mx-auto p-6 border w-96 shadow-lg rounded-lg bg-white">
             <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Modifier le Receveur</h3>
 
-            <form id="editForm" action="receveur/update" method="POST" class="space-y-4">
+            <form id="editForm" action="${pageContext.request.contextPath}/receveur/update" method="POST" class="space-y-4">
                 <input type="hidden" name="id" id="editId">
 
                 <div>
@@ -396,6 +398,13 @@
                     <input type="text" name="cin" id="editCin"
                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
                 </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Date de naissance</label>
+                    <input type="date" name="dateNaissance" id="editDateNaissance"
+                           class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
+                </div>
+
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Téléphone</label>
@@ -425,14 +434,6 @@
                         <option value="CRITIQUE">CRITIQUE</option>
                         <option value="URGENT">URGENT</option>
                         <option value="NORMAL">NORMAL</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">État</label>
-                    <select name="etat" id="editEtat"
-                            class="w-full border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500">
-                        <option value="EN_ATTENTE">EN_ATTENTE</option>
-                        <option value="SATISFAIT">SATISFAIT</option>
                     </select>
                 </div>
 
@@ -470,17 +471,18 @@
             }
         });
 
-        function openEditModal(id, nom, prenom, cin, telephone, groupeSanguin, urgence, etat) {
-                document.getElementById('editId').value = id;
-                document.getElementById('editNom').value = nom;
-                document.getElementById('editPrenom').value = prenom;
-                document.getElementById('editCin').value = cin;
-                document.getElementById('editTelephone').value = telephone;
-                document.getElementById('editGroupeSanguin').value = groupeSanguin;
-                document.getElementById('editUrgence').value = urgence;
-                document.getElementById('editEtat').value = etat;
-                document.getElementById('editModal').classList.remove('hidden');
-            }
+      function openEditModal(id, nom, prenom, cin, telephone, groupeSanguin, urgence, etat, dateNaissance) {
+          document.getElementById('editId').value = id;
+          document.getElementById('editNom').value = nom;
+          document.getElementById('editPrenom').value = prenom;
+          document.getElementById('editCin').value = cin;
+          document.getElementById('editTelephone').value = telephone;
+          document.getElementById('editGroupeSanguin').value = groupeSanguin;
+          document.getElementById('editUrgence').value = urgence;
+          document.getElementById('editDateNaissance').value = dateNaissance;
+          document.getElementById('editModal').classList.remove('hidden');
+      }
+
 
             function closeEditModal() {
                 document.getElementById('editModal').classList.add('hidden');
