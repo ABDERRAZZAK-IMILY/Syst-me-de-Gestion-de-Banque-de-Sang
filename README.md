@@ -210,6 +210,10 @@ mvn test
 ![alt text]({E486BABC-0AB7-403B-9E0E-A97B0E0DBD4E}.png)
 
 
+# schéma récapitulatif
+
+![img.png](img.png)
+
 # 📝 Gestion de Projet
 
 Méthodologie : Scrum / JIRA
