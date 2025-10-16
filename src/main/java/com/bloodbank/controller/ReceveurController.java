@@ -56,7 +56,7 @@ public class ReceveurController extends HttpServlet {
      List<Receveur> r =  service.Findall();
 
      req.setAttribute("receveurs" , r );
-        req.getRequestDispatcher("/Receveurs.jsp").forward(req ,resp);
+     req.getRequestDispatcher("/Receveurs.jsp").forward(req ,resp);
 
     }
 
